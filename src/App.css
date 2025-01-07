@@ -1,0 +1,144 @@
+.App {
+  text-align: center;
+  background-color: white;
+  /* Replace with your desired background color */
+  height: 100vh;
+  /* Fills the viewport */
+  margin: 0;
+  /* Removes any default margins */
+}
+
+.SaveTheDate {
+  font-size: 32px;
+}
+
+.VideoMessage {
+
+  color: black;
+  font-family: 'WastedVindey', sans-serif;
+  font-size: 16px;
+  padding: 30px;
+  background-color: white;
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsla(0, 0%, 0%, 0.1),
+    0 8px 8px hsla(0, 0%, 0%, 0.15),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (min-width: 768px) {
+
+  /* Tablet and up */
+  .FalckWedding {
+    font-size: 2.5rem;
+    /* Larger font size for tablets */
+  }
+
+  .App-Body {
+    background-image: url('/public/DinnerTable.jpg');
+    background-size: 2840px;
+    ;
+  }
+
+  .VideoMessage {
+    font-size: 1.2rem;
+    /* Slightly larger text */
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .FalckWedding {
+    font-size: 3rem;
+    /* Even larger font size for laptops */
+  }
+
+  .App-Body {
+    background-image: url('/public/DinnerTable.jpg');
+    background-size: 2140px;
+  }
+
+  .VideoMessage {
+    font-size: 1.5rem;
+  }
+}
+
+.App-header {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 1rem;
+}
+
+.App-Body {
+  text-align: center;
+  background-color: #FFF6E3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: 0;
+  background-image: url('/public/DinnerTable.jpg');
+  background-size: 1720px;
+  ;
+}
+
+.VideoStyle {
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsla(0, 0%, 0%, 0.1),
+    0 8px 8px hsla(0, 0%, 0%, 0.15),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.FalckWedding {
+  font-family: 'Gosseliena', sans-serif;
+  font-size: 180px;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  /* Use 'sans-serif' as a fallback */
+}
+
+
+@font-face {
+  font-family: 'Gosseliena';
+  src: url('/public/Gosseliena.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'WastedVindey';
+  src: url('/public/WastedVindey.ttf') format('truetype');
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
