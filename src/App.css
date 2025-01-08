@@ -12,6 +12,11 @@
   font-size: 32px;
 }
 
+.LineArt {
+  width: 70%;
+  height: 120px;
+}
+
 .VideoMessage {
 
   color: black;
@@ -36,6 +41,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+
+  .LineArt {
+    width: 70%;
+    height: 120px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -44,6 +54,11 @@
   .FalckWedding {
     font-size: 2.5rem;
     /* Larger font size for tablets */
+  }
+
+  .LineArt {
+    width: 50%;
+    height: 120px;
   }
 
   .App-Body {
@@ -63,6 +78,11 @@
   .FalckWedding {
     font-size: 3rem;
     /* Even larger font size for laptops */
+  }
+
+  .LineArt {
+    width: 50%;
+    height: 120px;
   }
 
   .App-Body {
@@ -115,7 +135,7 @@
 
 .FalckWedding {
   font-family: 'Gosseliena', sans-serif;
-  font-size: 100px;
+  font-size: 160px;
   color: black;
   margin-bottom: 20px;
   margin-top: 0px;
