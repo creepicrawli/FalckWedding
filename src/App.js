@@ -1,4 +1,3 @@
-
 import './App.css';
 import './WeddingVideo.js';
 import React, { StrictMode } from 'react';
@@ -7,7 +6,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <img className='LineArt' src='/LineArt.png' alt='' />
+        <img src='/LineArt.png' alt='' width='70%' height='120px' />
         <p className='FalckWedding'>
           Falck Wedding
         </p>
