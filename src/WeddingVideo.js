@@ -1,7 +1,7 @@
 import ReactPlayer from 'react-player';
 import './App.css';
 import React, { useRef } from 'react';
-const VIDEO_PATH = "https://falckwebsite.s3.ap-southeast-2.amazonaws.com/DASaveDate.mp4";
+const VIDEO_PATH = "https://d22sfwj1wctkr8.cloudfront.net/DASaveDate.mp4";
 function WeddingVideo() {
   const playerRef = useRef(null);
   return (
