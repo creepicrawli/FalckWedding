@@ -7,7 +7,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src='/LineArt.png' alt='' width='70%' height='120px' />
+        <img className='LineArt' src='/LineArt.png' alt='' />
         <p className='FalckWedding'>
           Falck Wedding
         </p>
