@@ -21,7 +21,7 @@ function App(props) {
       <footer className='footer'>
         <div className='VideoMessage'>
           <p className='SaveTheDate'>
-            Save the Date!
+            Dave the Date!
           </p>
           <p>
             We’re excited to invite you to a weekend wedding getaway in Gansbaai.
