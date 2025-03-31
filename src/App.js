@@ -1,8 +1,18 @@
 import './App.css';
 import './WeddingVideo.js';
-import React, { StrictMode } from 'react';
+import React, { StrictMode, useEffect } from 'react';
 import WeddingVideo from './WeddingVideo.js';
+import { generateToken, messaging } from './notifications/firebase.js';
+import { onMessage } from 'firebase/messaging';
 function App(props) {
+  useEffect(() => {
+    generateToken();
+    onMessage(messaging, (payload) => {
+      console.log(payload);
+    });
+  }, []);
+
+
   return (
     <div className="App">
       <header className="App-header">
