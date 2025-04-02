@@ -43,7 +43,7 @@ function App(props) {
         <p className='FalckWedding'>
           Falck Wedding
         </p>
-        <button onClick={handleForceRefresh}>🔄 Refresh FCM Token</button>
+
       </header>
       <main className="App-Body">
         <StrictMode>
