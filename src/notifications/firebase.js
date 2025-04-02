@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 //import { getAnalytics } from "firebase/analytics";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, getToken, onMessage, deleteToken } from "firebase/messaging";
 
 
 
@@ -22,13 +22,42 @@ export const messaging = getMessaging(app);
 
 //generate Token
 export const generateToken = async () => {
-    const permission = await Notification.requestPermission();
-    console.log(permission);
-    if (permission === "granted") {
-        const token = await getToken(messaging, {
-            vapidKey: "BK-SK2Qo_m9TSCT_N5JdR5srpmaLIDagDBR29H4DGWXQt65XAD4qIrk3M4e9jbAvfkPQAewHrSpvEDDJesvXkuw",
-        });
-        console.log(token);
+    try {
+        const permission = await Notification.requestPermission();
+        console.log(permission);
+        if (permission === "granted") {
+            const token = await getToken(messaging, {
+                vapidKey: "BK-SK2Qo_m9TSCT_N5JdR5srpmaLIDagDBR29H4DGWXQt65XAD4qIrk3M4e9jbAvfkPQAewHrSpvEDDJesvXkuw",
+            });
+            console.log("New FCM Token: ", token);
+        } else {
+            console.warn("🚫 Notification permission denied");
+            return null;
+        }
+
+    } catch (err) {
+        console.error("❌ Error getting FCM token:", err);
+        return null;
     }
 
+};
+
+// Force refresh by deleting the current token and getting a new one
+export const refreshFcmToken = async () => {
+    try {
+        const oldToken = await getToken(messaging, { vapidKey: "BK-SK2Qo_m9TSCT_N5JdR5srpmaLIDagDBR29H4DGWXQt65XAD4qIrk3M4e9jbAvfkPQAewHrSpvEDDJesvXkuw" });
+        if (oldToken) {
+            await deleteToken(messaging);
+            console.log("🧼 Old token deleted");
+        }
+
+        const newToken = await getToken(messaging, {
+            vapidKey: "BK-SK2Qo_m9TSCT_N5JdR5srpmaLIDagDBR29H4DGWXQt65XAD4qIrk3M4e9jbAvfkPQAewHrSpvEDDJesvXkuw"
+        });
+        console.log("🔁 New FCM Token:", newToken);
+        return newToken;
+    } catch (error) {
+        console.error("❌ Failed to refresh token:", error);
+        return null;
+    }
 };

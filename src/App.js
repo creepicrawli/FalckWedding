@@ -2,15 +2,38 @@ import './App.css';
 import './WeddingVideo.js';
 import React, { StrictMode, useEffect } from 'react';
 import WeddingVideo from './WeddingVideo.js';
-import { generateToken, messaging } from './notifications/firebase.js';
+import { generateToken, messaging, refreshFcmToken } from './notifications/firebase.js';
 import { onMessage } from 'firebase/messaging';
 function App(props) {
   useEffect(() => {
-    generateToken();
+    generateToken().then((token) => {
+      if (token) {
+        console.log("✅ Initial token on load:", token);
+      }
+    });
     onMessage(messaging, (payload) => {
-      console.log(payload);
+      console.log("foreground message received: ", payload);
+
+      const { title, body, image } = payload.notification;
+
+      if (Notification.permission === "granted") {
+        new Notification(title, {
+          body,
+          icon: "/davicons/favicon-32x32.png", // ✅ fallback icon
+        });
+      } else {
+        console.warn('⚠️ Payload has no "notification" field:', payload);
+      }
+
     });
   }, []);
+
+  const handleForceRefresh = async () => {
+    const newToken = await refreshFcmToken();
+    if (newToken) {
+      console.log("📬 New token ready to register or send:", newToken);
+    }
+  };
 
 
   return (
@@ -20,18 +43,18 @@ function App(props) {
         <p className='FalckWedding'>
           Falck Wedding
         </p>
-
+        <button onClick={handleForceRefresh}>🔄 Refresh FCM Token</button>
       </header>
-      <body className="App-Body">
+      <main className="App-Body">
         <StrictMode>
           <WeddingVideo />
         </StrictMode>
 
-      </body>
+      </main>
       <footer className='footer'>
         <div className='VideoMessage'>
           <p className='SaveTheDate'>
-            Dave the Date!
+            Save the Date!
           </p>
           <p>
             We’re excited to invite you to a weekend wedding getaway in Gansbaai.
