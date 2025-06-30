@@ -13,10 +13,8 @@ function WeddingVideo() {
   }, []);
 
   return (
-    <div className="VideoStyle">
-      <ReactPlayer ref={playerRef} url={VIDEO_PATH} width="203px" playing={false} controls={true}
-      />
-      {/* <ReactPlayer src={'./D&A Save the date HD'} controls={true} onPlay={() => console.log('video is playing')} onPause={() => console.log('video is paused')} />*/}
+    <div style={{ height: 200 }} className="VideoStyle">
+
     </div>
   )
 };

@@ -12,6 +12,43 @@
   font-size: 32px;
 }
 
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.admin-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.admin-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e891a4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-button:hover {
+  background-color: #c96b85;
+}
+
+.admin-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
 .VideoMessage {
 
   color: black;
@@ -83,7 +120,7 @@
   justify-content: center;
   text-align: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
   padding: 1rem;
 }
 
