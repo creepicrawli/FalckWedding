@@ -139,6 +139,19 @@
   ;
 }
 
+.links {
+  width: 210px;
+}
+
+.App-Body2 {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
 .VideoStyle {
   box-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.1),
