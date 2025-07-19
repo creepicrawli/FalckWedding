@@ -3,17 +3,17 @@
   "name": "We have big news!!",
   "icons": [
     {
-      "src": "davicons/favicon.ico",
+      "src": "davicons/WeddingDay.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "davicons/apple-touch-icon.png",
+      "src": "davicons/WeddingDay.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "davicons/android-chrome-512x512.png",
+      "src": "davicons/WeddingDay.png",
       "type": "image/png",
       "sizes": "512x512"
     }
